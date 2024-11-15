@@ -127,6 +127,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\HinhAnh\BaiTap\tmp.cs" />
+    <Compile Include="Content\HinhAnh\DangKy_BaiTap\Class1.cs" />
+    <Compile Include="Content\HinhAnh\GiamGia\Class1.cs" />
+    <Compile Include="Content\HinhAnh\KhoaHoc\Class1.cs" />
+    <Compile Include="Content\HinhAnh\LopHoc\Class1.cs" />
+    <Compile Include="Content\HinhAnh\TaiLieu\Class1.cs" />
+    <Compile Include="Content\HinhAnh\ThanhToan\Class1.cs" />
     <Compile Include="Controllers\GiangVienController.cs" />
     <Compile Include="Controllers\HocVienController.cs" />
     <Compile Include="Controllers\QuanTriVienController.cs" />
@@ -294,13 +301,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\HinhAnh\BaiTap\" />
-    <Folder Include="Content\HinhAnh\DangKy_BaiTap\" />
-    <Folder Include="Content\HinhAnh\GiamGia\" />
-    <Folder Include="Content\HinhAnh\KhoaHoc\" />
-    <Folder Include="Content\HinhAnh\LopHoc\" />
-    <Folder Include="Content\HinhAnh\TaiLieu\" />
-    <Folder Include="Content\HinhAnh\ThanhToan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
