@@ -176,6 +176,7 @@
     <Content Include="Content\HinhAnh\GiaoDien\user.png" />
     <Content Include="Content\HinhAnh\GiaoDien\yola-english-high-resolution-logo.png" />
     <Content Include="Content\HinhAnh\GiaoDien\youtube.jpg" />
+    <Content Include="Content\HinhAnh\KhoaHoc\read.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -300,7 +301,6 @@
     <Folder Include="Content\HinhAnh\BaiTap\" />
     <Folder Include="Content\HinhAnh\DangKy_BaiTap\" />
     <Folder Include="Content\HinhAnh\GiamGia\" />
-    <Folder Include="Content\HinhAnh\KhoaHoc\" />
     <Folder Include="Content\HinhAnh\LopHoc\" />
     <Folder Include="Content\HinhAnh\TaiLieu\" />
     <Folder Include="Content\HinhAnh\ThanhToan\" />
