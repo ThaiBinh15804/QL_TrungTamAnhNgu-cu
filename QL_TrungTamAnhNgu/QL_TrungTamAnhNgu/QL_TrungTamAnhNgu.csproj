@@ -297,6 +297,8 @@
     <Content Include="Views\GiangVien\DangNhap.cshtml" />
     <Content Include="Views\GiangVien\Test.cshtml" />
     <Content Include="Views\Shared\_LayoutGiangVien.cshtml" />
+    <Content Include="Views\Shared\_LayoutQuanTriVien.cshtml" />
+    <Content Include="Views\QuanTriVien\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,9 +310,9 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\DataClasses1.dbml.layout">
+    <None Include="Models\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
