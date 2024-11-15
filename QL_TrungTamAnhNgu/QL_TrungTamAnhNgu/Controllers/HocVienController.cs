@@ -15,6 +15,9 @@ namespace QL_TrungTamAnhNgu.Controllers
         {
             return View();
         }
-
+        public ActionResult ssss()
+        {
+            return View();
+        }
     }
 }
