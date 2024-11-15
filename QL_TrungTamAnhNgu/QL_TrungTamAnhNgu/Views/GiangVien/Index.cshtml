@@ -2,8 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutGiangVien.cshtml";
 }
-
 
 <div class="container mt-4">
     @if (TempData["ThongBao"] != null)
@@ -13,37 +13,9 @@
 
     <h2>
         Xin chào bạn, @{
-            GiangVien ng = Session["User"] as GiangVien;
+            GiangVien ng = Session["user"] as GiangVien;
             <span>@ng.HoTen</span>
         }
     </h2>
-
-    <p>Dưới đây là các lớp học do bạn giảng dạy gần đây</p>
-
-    <!-- Thông báo nhanh -->
-    @*<div class="alert alert-warning">
-            <strong>Thông báo:</strong> Kiểm tra các khóa học của bạn để cập nhật thông tin.
-        </div>*@
-
-    <!-- Danh sách khóa học -->
-    <div class="row">
-        @*@foreach (var item in Model)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm">
-                    <img src="@(item.AnhBia != null ? Url.Content("~/Content/GiangVien/HinhAnh/KhoaHoc/" + item.AnhBia) : Url.Content("~/Content/GiangVien/HinhAnh/Base/education-high-resolution-logo.png"))" class="card-img-top" alt="Ảnh bìa" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenKhoaHoc)</h5>
-                        <p class="mt-2">
-                            Trạng thái:
-                            <span class="badge @(item.TrangThai ? "bg-success" : "bg-warning text-dark")">
-                                @(item.TrangThai ? "Đã duyệt" : "Chưa duyệt")
-                            </span>
-                        </p>
-                        <a href="/GiangVien/KhoaHoc/?makh=@Html.DisplayFor(modelItem => item.MaKhoaHoc)" class="btn btn-primary">Chi tiết</a>
-                    </div>
-                </div>
-            </div>
-        }*@
-    </div>
+    
 </div>

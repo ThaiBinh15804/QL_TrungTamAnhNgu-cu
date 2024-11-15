@@ -72,7 +72,7 @@ namespace QL_TrungTamAnhNgu.Controllers
                 
                 FormsAuthentication.SetAuthCookie(user.TenTaiKhoan, false);
             }
-            return RedirectToAction("Test", "GiangVien");    
+            return RedirectToAction("Index", "GiangVien");    
         }
 
 
@@ -88,6 +88,12 @@ namespace QL_TrungTamAnhNgu.Controllers
         {
             GiangVien gv = (GiangVien)Session["User"];
             return View(data.LopHocs.Where(t => t.MaGiangVien == gv.MaGiangVien).ToList());
+        }
+
+        public ActionResult ChiTietLopHoc(string malop)
+        {
+            LopHoc l = data.LopHocs.FirstOrDefault(t => t.MaLop == malop);
+            return View(l);
         }
 
     }
