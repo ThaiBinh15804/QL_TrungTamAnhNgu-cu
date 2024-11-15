@@ -96,5 +96,21 @@ namespace QL_TrungTamAnhNgu.Controllers
             return View(l);
         }
 
+        public ActionResult XuLyDieuHuong(string malop, string page)
+        {
+            TempData["DieuHuong"] = page;
+            return RedirectToAction("ChiTietLopHoc", new { malop = malop });
+        }
+
+        public ActionResult HocVien(string malop)
+        {
+            // Tao sp lấy ra ds học viên thuộc về lớp học và sử dụng ở đây
+            return PartialView(data.HocViens.Where(t => t.ThanhToans.Where( u => u.DangKies.Any()).Any()));
+        }
+
+        public ActionResult ThongTin(string malop)
+        {
+            return PartialView(data.LopHocs.FirstOrDefault(t => t.MaLop == malop));
+        }
     }
 }

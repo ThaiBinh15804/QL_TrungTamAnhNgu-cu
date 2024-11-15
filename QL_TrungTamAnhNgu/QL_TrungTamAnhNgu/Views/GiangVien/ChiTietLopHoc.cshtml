@@ -13,33 +13,27 @@
         <!-- Navigation Menu -->
         <ul class="nav text-dark nav-pills flex-column mt-3">
             <li class="nav-item mb-2">
-                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?makh=@Model.MaKhoaHoc&page=BaiHoc">
+                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?malop=@Model.MaLop&page=ThongTin">
+                    <i class=" me-1 fa-solid fa-cog me-2"></i>
+                    <span>Thông tin lớp</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?malop=@Model.MaLop&page=HocVien">
                     <i class=" me-1 fa-solid fa-book me-2"></i>
-                    <span>Bài học</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?makh=@Model.MaKhoaHoc&page=BaoCao">
-                    <i class=" me-1 fa-regular fa-file-alt me-2"></i>
-                    <span>Báo cáo</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?makh=@Model.MaKhoaHoc&page=BaiTap">
-                    <i class=" me-1 fa-regular fa-star me-2"></i>
-                    <span>Bài tập</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?makh=@Model.MaKhoaHoc&page=HocVien">
-                    <i class=" me-1 fa-solid fa-users me-2"></i>
                     <span>Học viên</span>
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?makh=@Model.MaKhoaHoc&page=ThietLap">
-                    <i class=" me-1 fa-solid fa-cog me-2"></i>
-                    <span>Thiết lập</span>
+                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?malop=@Model.MaLop&page=DiemDanh">
+                    <i class=" me-1 fa-regular fa-file-alt me-2"></i>
+                    <span>Điểm danh</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link d-flex align-items-center px-0 py-2" href="/GiangVien/XuLyDieuHuong/?malop=@Model.MaLop&page=BaiTap">
+                    <i class=" me-1 fa-regular fa-star me-2"></i>
+                    <span>Bài tập</span>
                 </a>
             </li>
         </ul>
@@ -52,11 +46,11 @@
 
             switch (dieuHuong)
             {
-                case "BaiHoc":
-                    @Html.Action("BaiHoc", "GiangVien", new { makh = Model.MaKhoaHoc })
+                case "ThongTin":
+                    @Html.Action("ThongTin", "GiangVien", new { malop = Model.MaLop })
                     break;
-                case "BaoCao":
-                @Html.Action("BaoCao", "GiangVien")
+                case "DiemDanh":
+                @Html.Action("DiemDanh", "GiangVien")
                     break;
                 case "BaiTap":
                 @Html.Action("BaiTap", "GiangVien")
@@ -64,11 +58,8 @@
                 case "HocVien":
                 @Html.Action("HocVien", "GiangVien")
                     break;
-                case "ThietLap":
-                @Html.Action("ThietLap", "GiangVien")
-                    break;
                 default:
-                @Html.Action("BaiHoc", "GiangVien")
+                @Html.Action("ThongTin", "GiangVien")
                     break;
             }
         }

@@ -1,0 +1,81 @@
+﻿@model QL_TrungTamAnhNgu.Models.LopHoc
+
+<fieldset>
+    <legend>LopHoc</legend>
+
+    <div class="display-label">
+         Tên lớp:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenLop)
+    </div>
+
+    <div class="display-label">
+         Khoá học của lớp này:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KhoaHoc.TenKhoaHoc)
+    </div>
+
+    <div class="display-label">
+         Phòng học: 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhongHoc.TenPhong)
+    </div>
+
+
+    <div class="display-label">
+         Ngày bắt đầu:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayBatDau)
+    </div>
+
+    <div class="display-label">
+         Ngày kết thúc:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayKetThuc)
+    </div>
+
+    <div class="display-label">
+         Trạng thái:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrangThai)
+    </div>
+
+    <div class="display-label">
+         Số lượng học viên tối đa:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuongToiDa)
+    </div>
+
+    <div class="display-label">
+         Số lượng học viên tối thiểu
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuongToiThieu)
+    </div>
+
+    @* Số lượng học viên hiện tại*@
+    <div class="display-label">
+        Số lượng học viên hiện tại:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThoiLuong)
+    </div>
+
+
+    <div class="display-label">
+         Số lượng tiết học:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThoiLuong)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

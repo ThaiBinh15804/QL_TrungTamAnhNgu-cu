@@ -138,7 +138,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataContextHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +292,8 @@
     <Content Include="Views\GiangVien\LopHocCuaToi.cshtml" />
     <Content Include="Views\GiangVien\Index.cshtml" />
     <Content Include="Views\GiangVien\ChiTietLopHoc.cshtml" />
+    <Content Include="Views\GiangVien\HocVien.cshtml" />
+    <Content Include="Views\GiangVien\ThongTin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
