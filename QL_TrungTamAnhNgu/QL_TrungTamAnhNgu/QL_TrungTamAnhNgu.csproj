@@ -277,6 +277,7 @@
     <Content Include="Views\GiangVien\Index.cshtml" />
     <Content Include="Views\GiangVien\DangNhap.cshtml" />
     <Content Include="Views\GiangVien\Test.cshtml" />
+    <Content Include="Views\Shared\_LayoutGiangVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -84,6 +84,11 @@ namespace QL_TrungTamAnhNgu.Controllers
             //return View(data.NhomNguoiDungs.ToList());
         }
 
+        public ActionResult LopHocCuaToi()
+        {
+            GiangVien gv = (GiangVien)Session["User"];
+            return View(data.LopHocs.Where(t => t.MaGiangVien == gv.MaGiangVien).ToList());
+        }
 
     }
 }
