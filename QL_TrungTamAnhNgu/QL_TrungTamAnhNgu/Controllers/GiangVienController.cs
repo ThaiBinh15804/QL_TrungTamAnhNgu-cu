@@ -6,10 +6,11 @@ using System.Web.Mvc;
 using QL_TrungTamAnhNgu.Models;
 using System.Configuration;
 using System.Web.Configuration;
+using System.Web.Security;
 
 namespace QL_TrungTamAnhNgu.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class GiangVienController : Controller
     {
         //
@@ -22,51 +23,54 @@ namespace QL_TrungTamAnhNgu.Controllers
             return View();
         }
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult DangNhap()
         {
             return View();
         }
 
+        [AllowAnonymous]
+        [HttpPost]
         public ActionResult XuLyDangNhap(FormCollection c)
         {
             string username = c["username"];
             string password = c["password"];
 
             string newConnectionString = "Data Source=THAIBINH-LAPTOP;Initial Catalog=QL_TrungTamAnhNgu;User ID=" + username + ";Password=" + password + ";";
-        
-            // Lấy đối tượng Configuration hiện tại từ web.config
-            Configuration config = WebConfigurationManager.OpenWebConfiguration("~");
+            data = new DataClasses1DataContext(newConnectionString);
 
-            // Lấy phần tử connectionStrings từ cấu hình
-            ConnectionStringsSection connectionStringsSection = config.GetSection("connectionStrings") as ConnectionStringsSection;
+            //// Lấy đối tượng Configuration hiện tại từ web.config
+            //Configuration config = WebConfigurationManager.OpenWebConfiguration("~");
 
-            if (connectionStringsSection != null)
-            {
-                // Tìm chuỗi kết nối theo tên trong cấu hình
-                ConnectionStringSettings connectionString = connectionStringsSection.ConnectionStrings["QL_TrungTamAnhNguConnectionString"];
+            //// Lấy phần tử connectionStrings từ cấu hình
+            //ConnectionStringsSection connectionStringsSection = config.GetSection("connectionStrings") as ConnectionStringsSection;
 
-                if (connectionString != null)
-                {
-                    // Cập nhật chuỗi kết nối với giá trị mới
-                    connectionString.ConnectionString = newConnectionString;
+            //if (connectionStringsSection != null)
+            //{
+            //    // Tìm chuỗi kết nối theo tên trong cấu hình
+            //    ConnectionStringSettings connectionString = connectionStringsSection.ConnectionStrings["QL_TrungTamAnhNguConnectionString"];
 
-                    // Lưu lại các thay đổi vào file web.config
-                    config.Save(ConfigurationSaveMode.Modified);
+            //    if (connectionString != null)
+            //    {
+            //        // Cập nhật chuỗi kết nối với giá trị mới
+            //        connectionString.ConnectionString = newConnectionString;
 
-                    // Đảm bảo các thay đổi được áp dụng ngay lập tức
-                    ConfigurationManager.RefreshSection("connectionStrings");
-                }
-            }
+            //        // Lưu lại các thay đổi vào file web.config
+            //        config.Save(ConfigurationSaveMode.Modified);
+
+            //        // Đảm bảo các thay đổi được áp dụng ngay lập tức
+            //        ConfigurationManager.RefreshSection("connectionStrings");
+            //    }
+            //}
 
             
             var user = data.NguoiDungs.FirstOrDefault(u => u.TenTaiKhoan == username && u.MatKhau == password);
             if (user != null)
             {
-                //GiangVien gv = user.GiangViens.SingleOrDefault();
-                //Session["User"] = gv;
-                //Session["UserConnectionString"] = data.Connection.ConnectionString; // Lưu chuỗi kết nối vào Session
-
+                GiangVien gv = user.GiangViens.SingleOrDefault();
+                Session["User"] = gv;
+                
+                FormsAuthentication.SetAuthCookie(user.TenTaiKhoan, false);
             }
             return RedirectToAction("Test", "GiangVien");    
         }
@@ -74,7 +78,10 @@ namespace QL_TrungTamAnhNgu.Controllers
 
         public ActionResult Test()
         {
-            return View(data.NhomNguoiDungs.ToList());
+            GiangVien gv = (GiangVien)Session["User"];
+            return View(data.LopHocs.Where(t => t.MaGiangVien == gv.MaGiangVien).ToList());
+            
+            //return View(data.NhomNguoiDungs.ToList());
         }
 
 
